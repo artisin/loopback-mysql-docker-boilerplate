@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysql": {
+    "host": "mysqlDb",
+    "port": 3306,
+    "database": "LOOPBACKdevdb",
+    "password": "LOOPBACKdevpwd",
+    "name": "mysql",
+    "connector": "mysql",
+    "user": "LOOPBACKdevuser"
+  }
+}
