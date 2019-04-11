@@ -1,6 +1,8 @@
 # Select node version
 From node:6.11.1
 
+RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+
 # Update/install pakcages
 RUN apt-get update && \
     apt-get install -y curl apt-transport-https build-essential libssl-dev libmysqlclient-dev && \
@@ -18,4 +20,4 @@ ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
 
 # Install globally in container -> we use yarn to avoid a permission headach
-RUN yarn && yarn global add loopback-cli nodemon loopback-connector-mysql
+RUN yarn && yarn global add loopback-cli@3.1.0 nodemon loopback-connector-mysql
